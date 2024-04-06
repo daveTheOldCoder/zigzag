@@ -16,8 +16,7 @@ data_*/
 mono_crash.*.json
 
 # Custom
-addons/godot-git-plugin
-addons/export_version/version.gd
+addons/
 todo.gd
 commit.log
 README.md.backup
