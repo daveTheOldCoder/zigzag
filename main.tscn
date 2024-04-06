@@ -1,0 +1,41 @@
+[gd_scene load_steps=7 format=3 uid="uid://by6r5sm3eijfv"]
+
+[ext_resource type="Script" path="res://main.gd" id="1_uuw61"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4oyrl"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_rimkb"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0beco"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_vxh2j"]
+material = SubResource("StandardMaterial3D_0beco")
+radius = 10.0
+height = 20.0
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_8rujp"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_uuw61")
+
+[node name="Mover" type="Area2D" parent="."]
+position = Vector2(315, 250)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Mover"]
+shape = SubResource("CircleShape2D_4oyrl")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Mover"]
+modulate = Color(0, 1, 0, 1)
+material = SubResource("CanvasItemMaterial_rimkb")
+mesh = SubResource("SphereMesh_vxh2j")
+
+[node name="Target" type="Area2D" parent="."]
+position = Vector2(315, 250)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Target"]
+shape = SubResource("CircleShape2D_4oyrl")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Target"]
+modulate = Color(1, 0, 0, 1)
+material = SubResource("CanvasItemMaterial_8rujp")
+mesh = SubResource("SphereMesh_vxh2j")
